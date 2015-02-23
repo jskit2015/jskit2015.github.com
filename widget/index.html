@@ -1,0 +1,26 @@
+
+<meta charset="UTF-8">
+<script>
+    window.apiready = function(){
+        // 引入 JSKit.
+        var kit = api.require("JSKit");
+
+        /* 创建一个 JSView 对象. */
+        kit.create({
+            class: "JSView",
+            info: {
+                frame: {x: 0, y: 0, w: api.winWidth, h: api.winHeight},
+                bgColor: "#FF0000",
+                hidden: false,
+                alpha: 0.8
+            }
+        }, function(ret, err){
+            alert("ret: " + JSON.stringify(ret) + "\n err: " + JSON.stringify(err));
+        });
+
+        kit.config();
+        kit.action();
+        kit.on();
+        kit.destroy();
+    }
+</script>
